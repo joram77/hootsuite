@@ -6,6 +6,7 @@ require "http"
 
 require_relative "hootsuite/version"
 require_relative "hootsuite/social_profile"
+require_relative "hootsuite/schedule"
 
 module Hootsuite
   class Error < StandardError; end
@@ -17,6 +18,11 @@ module Hootsuite
     def get(endpoint)
       HTTP.auth("Bearer #{ACCESS_TOKEN}")
           .get("#{BASE_URL}/#{endpoint}")
+    end
+
+    def post(endpoint, params)
+      HTTP.auth("Bearer #{ACCESS_TOKEN}")
+          .post("#{BASE_URL}/#{endpoint}", json: params)
     end
   end
 end
