@@ -8,7 +8,7 @@ module Hootsuite
       @client = Client.new
     end
 
-    def social_profiles
+    def social_profile_ids
       r = @client.get(ENDPOINT)
 
       if r.status.success?
