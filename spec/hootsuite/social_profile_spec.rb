@@ -2,7 +2,7 @@
 
 RSpec.describe Hootsuite::SocialProfile do
   let(:base_url) { 'https://platform.hootsuite.com/v1' }
-  let(:access_token) { 'h6Y8yTOCwrvx_GVcTHXQDfk2EyXePLiFXz2gJohWaAw.0KdxEKAh5nKu7HISGFy4H2jvlHfvvwSpemvU1yCxTPg' }
+  let(:access_token) { 'TOKEN' }
 
   describe '#social_profile_ids' do
     context 'with social profile ids' do

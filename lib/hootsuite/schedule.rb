@@ -15,7 +15,7 @@ module Hootsuite
       r = @client.post(ENDPOINT, payload)
 
       if r.status.success?
-        puts "yay"
+        "yay"
       else
         puts r.body.to_s
       end
