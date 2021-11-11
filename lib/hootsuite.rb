@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
-require "dotenv/load"
+require "dotenv"
 require "byebug"
 require "http"
 
 require_relative "hootsuite/version"
 require_relative "hootsuite/social_profile"
 require_relative "hootsuite/schedule"
+
+Dotenv.load('.env.test')
 
 module Hootsuite
   class Error < StandardError; end
