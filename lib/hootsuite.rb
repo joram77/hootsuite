@@ -7,8 +7,9 @@ require "http"
 require_relative "hootsuite/version"
 require_relative "hootsuite/social_profile"
 require_relative "hootsuite/schedule"
+require_relative "hootsuite/oauth/authenticate"
 
-Dotenv.load('.env.test')
+Dotenv.load('.env', '.env.test')
 
 module Hootsuite
   class Error < StandardError; end
@@ -25,6 +26,12 @@ module Hootsuite
     def post(endpoint, params)
       HTTP.auth("Bearer #{ACCESS_TOKEN}")
           .post("#{BASE_URL}/#{endpoint}", json: params)
+    end
+
+    def authenticate(endpoint, headers:, params:)
+      HTTP.basic_auth(user: ENV['CLIENT_ID'], pass: ENV['SECRET_ID'])
+          .headers(headers)
+          .post("#{BASE_URL}/#{endpoint}", form: params)
     end
   end
 end
