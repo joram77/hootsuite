@@ -5,19 +5,13 @@ require_relative 'lib/hootsuite'
 enable :sessions
 
 get "/" do
-  base_url = 'https://platform.hootsuite.com/oauth2/auth'
-  client_id = ENV['CLIENT_ID']
-  redirect_uri = ENV['REDIRECT_URI']
-
   if session[:access_token]
     "
       <h2>Hootsuite Access Token</h2>
       <p>#{session[:access_token]}</p>
     "
   else
-    url = "#{base_url}?response_type=code&client_id=#{client_id}&redirect_uri=#{redirect_uri}"
-
-    "<a href=#{url}>Connect with Hootsuite</a>"
+    "<a href=#{Hootsuite::Oauth::Authenticate.auth_url}>Connect with Hootsuite</a>"
   end
 end
 
