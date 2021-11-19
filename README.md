@@ -24,7 +24,13 @@ $ gem install hootsuite
 
 ## Usage
 
-TODO: Write usage instructions here
+Run local server to test OAuth integration:
+
+```
+$ ruby local_server.rb
+```
+
+and go to `localhost:4567`.
 
 ## Development
 
