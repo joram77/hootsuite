@@ -8,6 +8,7 @@ require_relative "hootsuite/version"
 require_relative "hootsuite/social_profile"
 require_relative "hootsuite/schedule"
 require_relative "hootsuite/oauth/authenticate"
+require_relative "hootsuite/oauth/refresh_token"
 
 Dotenv.load('.env', '.env.test')
 
