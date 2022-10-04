@@ -24,6 +24,15 @@ $ gem install hootsuite
 
 ## Usage
 
+Copy `.env.example` to `.env.local` and setup env vars:
+
+```shell
+HOOTSUITE_ACCESS_TOKEN="YOUR_CONSUMER_KEY"
+CLIENT_ID="HOOTSUITE_CLIENT_ID"
+SECRET_ID="HOOTSUITE_SECRET_ID"
+REDIRECT_URI="https://redirecturl.com"
+```
+
 Run local server to test OAuth integration:
 
 ```
@@ -40,7 +49,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hootsuite.
+Bug reports and pull requests are welcome on GitHub at https://github.com/devaspros/hootsuite.
 
 ## License
 
