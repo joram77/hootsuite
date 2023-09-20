@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     hootsuite (0.1.0)
-      http (= 4.4.1)
+      http (>= 4.4.1)
 
 GEM
   remote: https://rubygems.org/
